@@ -976,11 +976,11 @@ public class MainMenu extends javax.swing.JFrame {
         dlg_about.setTitle("Über PatchOwe");
         dlg_about.setResizable(false);
         dlg_about.addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                dlg_aboutWindowOpened(evt);
-            }
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 dlg_aboutWindowActivated(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                dlg_aboutWindowClosed(evt);
             }
         });
 
@@ -1814,13 +1814,11 @@ public class MainMenu extends javax.swing.JFrame {
 		dlg_about.setVisible(true);
     }//GEN-LAST:event_tbar_btn_aboutActionPerformed
 
-    private void dlg_aboutWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_dlg_aboutWindowOpened
+    private void dlg_aboutWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_dlg_aboutWindowActivated
 		lbl_about_info.setText("<html>Mit PatchOwe können Sie Ihre gesamten Schulden verwalten und einsehen, Rückzahlungen erstellen.<br><br>" +
 "Zusätzlich können Sie Ihren Geldbestand eingeben, um dann Ihren Gesamtgeldbestand nach Begleichung aller Schulden zu sehen. Auch möglich sind sogenannte \"virtuelle Zahlungen\". Sie können Produkte mit Ihrem Preis eintragen, um dann berechnen zu lassen, wie oft Sie ein Produkt kaufen können und wieviel Geld Sie danach haben werden.<br>" +
 "In zukünftigen Versionen können Sie sogar sogenannte \"Einkaufslisten\" erstellen und abspeichern.</html>");
-    }//GEN-LAST:event_dlg_aboutWindowOpened
-
-    private void dlg_aboutWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_dlg_aboutWindowActivated
+		
 		try {
 			URL url = new URL("http://averi.at/programme/patchowe/version.html");      
 			BufferedReader r = new BufferedReader(new InputStreamReader( url.openStream()));      
@@ -1842,6 +1840,10 @@ public class MainMenu extends javax.swing.JFrame {
 			Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
 		}
     }//GEN-LAST:event_dlg_aboutWindowActivated
+
+    private void dlg_aboutWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_dlg_aboutWindowClosed
+        lbl_about_info.setText("Information...");
+    }//GEN-LAST:event_dlg_aboutWindowClosed
 
 	/**
 	 *
