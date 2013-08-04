@@ -1,0 +1,10 @@
+#config.po
+#Tue Jul 30 16:12:40 CEST 2013
+Host=mysql.lima-city.de
+Password=DMB5U36e10
+FirstStart=false
+DB_Name=db_268068_4
+MenuStyle=1
+GB_Bankomat=10000.0
+UserName=USER268068
+GB_Bar=1000.0
